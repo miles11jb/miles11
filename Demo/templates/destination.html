@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination</title>
+</head>
+<body>
+    <h2>Create Destination</h2>   
+    <form method="POST" action="">
+        {{form.hidden_tag()}}
+        {{form.name}}
+        {{form.submit}}
+    
+        <h3>Destination List</h3>
+        <ul>
+            {% for destination in destinations %}
+                <li>{{ destination.name }}</li>
+            {% else %}
+                <li>No destinations available</li>
+            {% endfor %}
+        </ul>
+
+    </form>
+    <a href="{{url_for('logout')}}">Logout</a><br>
+
+</body>
+</html>
